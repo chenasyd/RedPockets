@@ -1,0 +1,261 @@
+# 红包插件中文消息配置
+
+# 消息前缀
+messages:
+  prefix: "&6[红包] &r"
+  colors:
+    success: "&a"
+    error: "&c"
+    info: "&e"
+    warning: "&6"
+
+# 命令帮助
+commands:
+  help:
+    header: "&e========== 红包插件帮助 =========="
+    footer: "&e================================"
+    main_command: "&7{command} - 红包系统主命令"
+    create: "&7{command} - 创建红包（打开GUI）"
+    random: "&7{command} - 创建随机红包"
+    average: "&7{command} - 创建平分红包"
+    grab: "&7{command} - 抢红包"
+    check: "&7{command} - 查看红包详情"
+    list: "&7{command} - 列出红包列表"
+
+  # 创建命令
+  create:
+    usage: "用法: {usage}"
+    invalid_amount: "金额必须大于0"
+    invalid_count: "数量必须大于0"
+    invalid_number: "请输入有效的数字"
+    insufficient_funds: "余额不足，无法创建红包"
+    amount_too_high: "红包金额不能超过 {max} 元"
+    success: "&a红包创建成功！\n&7ID: {id}\n&7数量: {count} 个"
+    success_item: "&a红包创建成功！\n&7ID: {id}\n&7数量: {count} 个"
+
+  # 随机红包命令
+  random:
+    usage: "用法: {usage}"
+    invalid_params: "金额和数量必须大于0"
+    invalid_number: "请输入有效的数字"
+    success: "&a随机红包创建成功！\n&7ID: {id}\n&7金额: {amount} 元\n&7数量: {count} 个"
+
+  # 抢红包命令
+  grab:
+    usage: "用法: {usage}"
+    success: "&a恭喜！你抢到了 {amount} 元！"
+    failed: "&c抢红包失败！红包可能不存在或已被抢完。"
+    invalid_id: "&c无效的红包ID！"
+
+  # 查看红包命令
+  check:
+    usage: "用法: {usage}"
+    not_found: "&c红包不存在！"
+    info: "&e========== 红包详情 =========="
+    id: "&7ID: {id}"
+    type: "&7类型: {type}"
+    amount: "&7总金额: {amount} 元"
+    count: "&7数量: {count} 个"
+    note: "&7备注: {note}"
+
+  # 列出红包命令
+  list:
+    not_implemented: "&c此功能暂未实现"
+
+  # 管理员命令
+  admin:
+    help:
+      header: "&e========== 管理员帮助 =========="
+      footer: "&e================================"
+      delete: "&7{command} - 删除红包"
+      reload: "&7{command} - 重载配置"
+      stats: "&7{command} - 查看统计信息"
+    delete:
+      usage: "用法: /redpocketadmin delete <id>"
+      success: "&a红包已删除: {id}"
+    reload:
+      success: "&a配置已重新加载！"
+    stats:
+      not_implemented: "&c此功能暂未实现"
+    no_permission: "&c你没有权限执行此命令！"
+
+# GUI 消息
+gui:
+  create:
+    type_select:
+      title: "&6选择红包类型"
+      coin:
+        title: "&e金币红包"
+        lore:
+          - "&7点击创建金币红包"
+          - "&7玩家抢取随机金额"
+      item:
+        title: "&e物品红包"
+        lore:
+          - "&7点击创建物品红包"
+          - "&7玩家随机抽取物品"
+
+    coin:
+      title: "&6创建金币红包"
+      amount:
+        title: "&e总金额: {amount} 元"
+        lore:
+          - "&7点击设置红包总金额"
+        input: "&7请在聊天栏输入总金额（输入 cancel 取消）"
+        success: "&a金额已设置为 {amount} 元"
+        invalid: "&c金额必须大于0"
+        invalid_number: "&c请输入有效的数字"
+        not_set: "&c请先设置金额"
+      count:
+        title: "&e数量: {count} 个"
+        lore:
+          - "&7点击设置红包数量"
+          - "&7代表可以被多少名玩家瓜分"
+        input: "&7请在聊天栏输入数量（输入 cancel 取消）"
+        success: "&a数量已设置为 {count} 个"
+        invalid: "&c数量必须大于0"
+        invalid_number: "&c请输入有效的数字"
+        not_set: "&c请先设置数量"
+      distribution:
+        title: "&e分配方式"
+        header: "&f选择分配方式:"
+        random: "随机分配（手气最佳）"
+        average: "平均分配（每人相同）"
+        changed: "&a分配方式已切换为：{type}"
+      amount_not_set: "&c请先设置金额"
+      count_not_set: "&c请先设置数量"
+      note:
+        title: "&e设置备注: {note}"
+        lore:
+          - "&7点击设置红包备注"
+        input: "&7请在聊天栏输入备注（输入 cancel 取消）"
+        success: "&a备注已设置"
+      confirm:
+        title: "&a确认发送"
+        lore:
+          - "&7点击发送红包"
+          - "&7发送后1小时内未领取完"
+          - "&7将自动退回剩余金额"
+        success: "&a红包发送成功！"
+
+    item:
+      title: "&6创建物品红包"
+      edit_icon:
+        title: "&e编辑物品 ({count} 个)"
+        lore:
+          - "&7点击打开物品编辑界面"
+      confirm:
+        title: "&a确认发送"
+        lore:
+          - "&7点击发送物品红包"
+          - "&7玩家随机抽取物品"
+        success: "&a物品红包发送成功！"
+      no_items: "&c请先添加物品到红包中"
+      already_sent: "&c红包已发送，请勿重复操作"
+      edit:
+        title: "&6编辑物品"
+        title_readonly: "&c查看物品（只读）"
+        lore:
+          - "&7拖拽物品到上方格子"
+          - "&7关闭时自动保存"
+        lore_readonly:
+          - "&c红包已发送，物品已锁定"
+          - "&7等待红包过期后可取回物品"
+
+  redpocket:
+    title: "&6红包详情"
+    type:
+      random: "随机红包"
+      average: "平分红包"
+      item: "物品红包"
+    icon:
+      random: "&e随机红包"
+      average: "&b平分红包"
+      lore:
+        - "&7类型: {type}"
+        - "&7总金额: {amount} 元"
+        - "&7数量: {count} 个"
+        - "&7备注: {note}"
+    info:
+      title: "&e红包信息"
+      lore:
+        - "&7发送者: {sender}"
+        - "&7类型: {type}"
+        - "&7总金额: {amount} 元"
+        - "&7数量: {count} 个"
+        - "&7备注: {note}"
+        - "&7创建时间: {created}"
+        - "&7过期时间: {expires}"
+    records:
+      title: "&e抢取记录"
+      lore:
+        - "&7已抢: {count} 个"
+        - "&7总金额: {total} 元"
+    buttons:
+      back:
+        title: "&c返回"
+        lore:
+          - "&7点击返回上级界面"
+      grab:
+        title: "&a抢红包"
+        lore:
+          - "&7点击抢取这个红包"
+    grab:
+      success: "&a恭喜！你抢到了 {amount} 元！"
+      success_item: "&a恭喜！你抢到了 {item}×{amount}！"
+      failed: "&c抢红包失败！红包可能不存在或已被抢完。"
+      already_grabbed: "&c你已经抢过这个红包了"
+      click_text: "[点击这里抢红包]"
+      hover_text: "点击抢取这个红包"
+      inventory_full: "&c你的背包已满，无法领取物品！"
+      empty: "&c红包中的物品已被领完！"
+    preview:
+      title: "&6物品红包预览"
+      not_found: "&c预览不存在或已过期"
+      click_hint: "点击查看物品预览"
+    broadcast:
+      unknown_player: "未知玩家"
+      coin_prefix: "玩家 "
+      coin_middle: " 在 "
+      coin_middle2: " 的红包中抢到了 "
+      coin_middle3: " 元"
+      coin_suffix: ""
+      item_prefix: "玩家 "
+      item_middle: " 领取了 "
+      item_middle2: " 的物品红包 "
+      item_suffix: ""
+      completed_prefix: "玩家 "
+      completed_middle: " 在 "
+      completed_middle2: " 的红包中抢到了 "
+      completed_middle3: " 元"
+      completed_suffix: "，"
+      completed_end: "气运爆棚！"
+      send_coin_prefix: "玩家 "
+      send_coin_middle1: " 发送了 "
+      send_coin_middle2: " 个价值为 "
+      send_coin_middle3: " 元的 "
+      send_coin_suffix: "，"
+      send_item_prefix: "玩家 "
+      send_item_middle: " 发送了一个 "
+      send_item_middle2: "，共包含 "
+      send_item_middle3: " 件物品，"
+
+  storage:
+    title: "&6储物间"
+    info:
+      title: "&e储物间信息"
+      lore:
+        - "&7这里保存了未领取完的物品红包"
+        - "&7你可以取出这些物品"
+    empty: "&a储物间已清空！"
+
+# 经济系统
+economy:
+  not_enabled: "&c经济系统未启用，请联系管理员"
+  withdraw_failed: "&c扣除金额失败，请稍后重试"
+  deposit_failed: "&c发放金额失败，请联系管理员"
+
+# 聊天输入
+chat_input:
+  cancelled: "&a操作已取消"
+  timeout: "&c输入超时，操作已取消"

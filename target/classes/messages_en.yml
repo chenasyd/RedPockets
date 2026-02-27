@@ -1,0 +1,260 @@
+# RedPockets Plugin English Messages Configuration
+
+# Message prefix
+messages:
+  prefix: "&6[RedPocket] &r"
+  colors:
+    success: "&a"
+    error: "&c"
+    info: "&e"
+    warning: "&6"
+
+# Command help
+commands:
+  help:
+    header: "&e========== RedPocket Help =========="
+    footer: "&e===================================="
+    main_command: "&7{command} - RedPocket main command"
+    create: "&7{command} - Create average red pocket"
+    random: "&7{command} - Create random red pocket"
+    average: "&7{command} - Create average red pocket"
+    grab: "&7{command} - Grab red pocket"
+    check: "&7{command} - View red pocket details"
+    list: "&7{command} - List red pockets"
+
+  # Create command
+  create:
+    usage: "Usage: {usage}"
+    invalid_amount: "Amount must be greater than 0"
+    invalid_count: "Count must be greater than 0"
+    invalid_number: "Please enter a valid number"
+    insufficient_funds: "Insufficient funds to create red pocket"
+    amount_too_high: "Red pocket amount cannot exceed {max}"
+    success: "&aRed pocket created successfully!\n&7ID: {id}\n&7Count: {count}"
+    success_item: "&aRed pocket created successfully!\n&7ID: {id}\n&7Count: {count}"
+
+  # Random red pocket command
+  random:
+    usage: "Usage: {usage}"
+    invalid_params: "Amount and count must be greater than 0"
+    invalid_number: "Please enter a valid number"
+    success: "&aRandom red pocket created successfully!\n&7ID: {id}\n&7Amount: {amount}\n&7Count: {count}"
+
+  # Grab red pocket command
+  grab:
+    usage: "Usage: {usage}"
+    success: "&aCongratulations! You grabbed {amount}!"
+    failed: "&cFailed to grab red pocket! The red pocket may not exist or is already finished."
+    invalid_id: "&cInvalid red pocket ID!"
+
+  # Check red pocket command
+  check:
+    usage: "Usage: {usage}"
+    not_found: "&cRed pocket not found!"
+    info: "&e========== Red Pocket Details =========="
+    id: "&7ID: {id}"
+    type: "&7Type: {type}"
+    amount: "&7Total Amount: {amount}"
+    count: "&7Count: {count}"
+    note: "&7Note: {note}"
+
+  # List red pockets command
+  list:
+    not_implemented: "&cThis feature is not yet implemented"
+
+  # Admin commands
+  admin:
+    help:
+      header: "&e========== Admin Help =========="
+      footer: "&e==============================="
+      delete: "&7{command} - Delete red pocket"
+      reload: "&7{command} - Reload configuration"
+      stats: "&7{command} - View statistics"
+    delete:
+      usage: "Usage: /redpocketadmin delete <id>"
+      success: "&aRed pocket deleted: {id}"
+    reload:
+      success: "&aConfiguration reloaded!"
+    stats:
+      not_implemented: "&cThis feature is not yet implemented"
+    no_permission: "&cYou don't have permission to execute this command!"
+
+# GUI messages
+gui:
+  create:
+    type_select:
+      title: "&6Select Red Pocket Type"
+      coin:
+        title: "&eCoin Red Pocket"
+        lore:
+          - "&7Click to create coin red pocket"
+          - "&7Players grab random amounts"
+      item:
+        title: "&eItem Red Pocket"
+        lore:
+          - "&7Click to create item red pocket"
+          - "&7Players randomly draw items"
+
+    coin:
+      title: "&6Create Coin Red Pocket"
+      amount:
+        title: "&eTotal Amount: {amount}"
+        lore:
+          - "&7Click to set total amount"
+        input: "&7Please enter total amount in chat (enter cancel to cancel)"
+        success: "&aAmount set to {amount}"
+        invalid: "&cAmount must be greater than 0"
+        invalid_number: "&cPlease enter a valid number"
+        not_set: "&cPlease set amount first"
+      count:
+        title: "&eCount: {count}"
+        lore:
+          - "&7Click to set red pocket count"
+          - "&7Number of players can grab"
+        input: "&7Please enter count in chat (enter cancel to cancel)"
+        success: "&aCount set to {count}"
+        invalid: "&cCount must be greater than 0"
+        invalid_number: "&cPlease enter a valid number"
+        not_set: "&cPlease set count first"
+      distribution:
+        title: "&eDistribution Type"
+        header: "&fSelect distribution type:"
+        random: "Random (Lucky best)"
+        average: "Average (Equal for all)"
+        changed: "&aDistribution type changed to: {type}"
+      amount_not_set: "&cPlease set amount first"
+      count_not_set: "&cPlease set count first"
+      note:
+        title: "&eSet Note: {note}"
+        lore:
+          - "&7Click to set red pocket note"
+        input: "&7Please enter note in chat (enter cancel to cancel)"
+        success: "&aNote set"
+      confirm:
+        title: "&aConfirm Send"
+        lore:
+          - "&7Click to send red pocket"
+          - "&7Unclaimed amount refunds after 1 hour"
+        success: "&aRed pocket sent successfully!"
+
+    item:
+      title: "&6Create Item Red Pocket"
+      edit_icon:
+        title: "&eEdit Item ({count})"
+        lore:
+          - "&7Click to open item edit interface"
+      confirm:
+        title: "&aConfirm Send"
+        lore:
+          - "&7Click to send item red pocket"
+          - "&7Players randomly draw items"
+        success: "&aItem red pocket sent successfully!"
+      no_items: "&cPlease add items to red pocket first"
+      already_sent: "&cRed pocket already sent, please do not repeat this operation"
+      edit:
+        title: "&6Edit Item"
+        title_readonly: "&cView Items (Read-Only)"
+        lore:
+          - "&7Drag items to top slots"
+          - "&7Auto-save on close"
+        lore_readonly:
+          - "&cRed pocket sent, items are locked"
+          - "&7Wait for red pocket to expire to retrieve items"
+
+  redpocket:
+    title: "&6Red Pocket Details"
+    type:
+      random: "Random"
+      average: "Average"
+      item: "Item"
+    icon:
+      random: "&eRandom Red Pocket"
+      average: "&bAverage Red Pocket"
+      lore:
+        - "&7Type: {type}"
+        - "&7Total Amount: {amount}"
+        - "&7Count: {count}"
+        - "&7Note: {note}"
+    info:
+      title: "&eRed Pocket Info"
+      lore:
+        - "&7Sender: {sender}"
+        - "&7Type: {type}"
+        - "&7Total Amount: {amount}"
+        - "&7Count: {count}"
+        - "&7Note: {note}"
+        - "&7Created: {created}"
+        - "&7Expires: {expires}"
+    records:
+      title: "&eGrab Records"
+      lore:
+        - "&7Grabbed: {count}"
+        - "&7Total Amount: {total}"
+    buttons:
+      back:
+        title: "&cBack"
+        lore:
+          - "&7Click to go back"
+      grab:
+        title: "&aGrab Red Pocket"
+        lore:
+          - "&7Click to grab this red pocket"
+    grab:
+      success: "&aCongratulations! You grabbed {amount}!"
+      success_item: "&aCongratulations! You grabbed {item}×{amount}!"
+      failed: "&cFailed to grab red pocket! The red pocket may not exist or is already finished."
+      already_grabbed: "&cYou have already grabbed this red pocket"
+      click_text: "[Click to Grab]"
+      hover_text: "Click to grab this red pocket"
+      inventory_full: "&cYour inventory is full, cannot receive items!"
+      empty: "&cAll items in red pocket have been claimed!"
+    preview:
+      title: "&6Item Red Pocket Preview"
+      not_found: "&cPreview not found or has expired"
+      click_hint: "Click to view item preview"
+    broadcast:
+      unknown_player: "Unknown Player"
+      coin_prefix: "Player "
+      coin_middle: " grabbed "
+      coin_middle2: " from "
+      coin_middle3: "'s red pocket"
+      coin_suffix: ""
+      item_prefix: "Player "
+      item_middle: " claimed "
+      item_middle2: "'s item red pocket "
+      item_suffix: ""
+      completed_prefix: "Player "
+      completed_middle: " grabbed "
+      completed_middle2: " from "
+      completed_middle3: "'s red pocket"
+      completed_suffix: ", "
+      completed_end: "Best Luck!"
+      send_coin_prefix: "Player "
+      send_coin_middle1: " sent "
+      send_coin_middle2: " red pockets worth "
+      send_coin_middle3: " ("
+      send_coin_suffix: "), "
+      send_item_prefix: "Player "
+      send_item_middle: " sent a "
+      send_item_middle2: " containing "
+      send_item_middle3: " items, "
+
+  storage:
+    title: "&6Storage"
+    info:
+      title: "&eStorage Info"
+      lore:
+        - "&7Unclaimed item red pockets stored here"
+        - "&7You can take these items"
+    empty: "&aStorage cleared!"
+
+# Economy
+economy:
+  not_enabled: "&cEconomy system not enabled, please contact admin"
+  withdraw_failed: "&cFailed to withdraw funds, please try again later"
+  deposit_failed: "&cFailed to deposit funds, please contact admin"
+
+# Chat input
+chat_input:
+  cancelled: "&aOperation cancelled"
+  timeout: "&cInput timeout, operation cancelled"

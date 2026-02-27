@@ -1,0 +1,136 @@
+# 红包插件主配置文件
+
+# 红包配置
+redpocket:
+  # 红包备注最大长度
+  max-note-length: 50
+  # 红包最大金额（需要Vault）
+  max-amount: 1000000.0
+  # 红包最小金额
+  min-amount: 0.01
+  # 普通红包最大数量
+  max-redpockets: 100
+  # 每个红包最多抢取次数限制（0为无限制）
+  max-grab-limit: 0
+  # 红包有效期（秒），0为永久有效
+  expiration-time: 86400
+  # 红包标题颜色
+  title-color: "&6"
+  # 红包内容颜色
+  content-color: "&e"
+
+# 显示配置
+display:
+  # 红包类型颜色
+  type-colors:
+    random: "&6"   # 随机红包：金色
+    average: "&b"  # 平分红包：亮蓝色
+  # 红包状态颜色
+  status-colors:
+    available: "&a"  # 可抢：绿色
+    grabbed: "&7"    # 已抢：灰色
+    expired: "&c"   # 已过期：红色
+
+# 权限配置
+permissions:
+  # 默认权限
+  default:
+    can-create: true      # 允许创建红包
+    can-grab: true        # 允许抢红包
+    can-send: true        # 允许发送红包
+    can-random: true      # 允许创建随机金额红包
+    can-average: true     # 允许创建平分红包
+    can-check: true       # 允许查看红包记录
+    can-delete: false     # 默认不可删除红包
+    can-broadcast: true   # 允许广播红包信息
+
+  # 管理员权限
+  admin:
+    can-create: true
+    can-grab: true
+    can-send: true
+    can-random: true
+    can-average: true
+    can-check: true
+    can-delete: true
+    can-broadcast: true
+    can-bypass: true      # 绕过所有限制
+
+# 语言配置
+language:
+  # 默认语言: en(英文), zh(中文)
+  default: "zh"
+  # 是否允许玩家切换语言
+  allow-player-switch: true
+
+# 消息配置
+messages:
+  # 是否启用消息
+  enabled: true
+  # 消息前缀
+  prefix: "&6[红包] &r"
+  # 消息颜色
+  colors:
+    success: "&a"
+    error: "&c"
+    info: "&e"
+    warning: "&6"
+
+# GUI配置
+gui:
+  # 是否启用GUI
+  enabled: true
+  # GUI标题
+  title: "&6红包系统"
+  # GUI大小（必须是9的倍数）
+  size: 54
+  # 是否显示红包备注
+  show-note: true
+  # 是否显示红包金额
+  show-amount: true
+
+# 占位符配置
+placeholders:
+  # 是否启用占位符
+  enabled: true
+  # 占位符前缀
+  prefix: "redpocket_"
+  # 是否缓存占位符
+  cache-enabled: true
+  # 缓存时间（秒）
+  cache-time: 30
+
+# 日志配置
+logging:
+  # 是否启用日志
+  enabled: true
+  # 日志级别: DEBUG, INFO, WARN, ERROR
+  level: INFO
+  # 是否记录到文件
+  file-logging: true
+  # 日志文件路径
+  log-file: "logs/redpocket.log"
+  # 最大日志文件大小（MB）
+  max-file-size: 10
+  # 保留的日志文件数量
+  max-files: 5
+
+# 随机红包配置
+random-redpocket:
+  # 随机算法：NORMAL(普通), WEIGHTED(加权)
+  algorithm: "WEIGHTED"
+  # 最小金额百分比（避免某人抢到太少）
+  min-percent: 0.01
+  # 最大金额百分比（避免某人抢到太多）
+  max-percent: 0.5
+
+# 广播配置
+broadcast:
+  # 是否启用广播
+  enabled: true
+  # 广播范围：SERVER(全服), WORLD(当前世界), NEARBY(附近玩家)
+  range: "SERVER"
+  # 附近玩家广播半径（当range为NEARBY时生效）
+  nearby-radius: 50
+  # 广播延迟（秒）
+  delay: 0

@@ -1,0 +1,61 @@
+name: RedPocketsPlugin
+version: 1.0.0
+main: com.redpockets.RedPocketsPlugin
+api-version: '1.21'
+authors: [chenasyd]
+description: 一个功能完整的红包插件，支持Spigot和Folia
+website: https://github.com/chenasyd
+softdepend: [PlaceholderAPI, Vault]
+
+# 支持的最低版本
+load: POSTWORLD
+
+# Folia支持标记
+folia-supported: true
+
+commands:
+  redpocket:
+    description: 红包系统主命令 | RedPockets System Main Command
+    usage: /redpocket help
+    aliases: [rp, 红包, hb]
+    permission: redpockets.use
+  redpocketadmin:
+    description: 红包管理员命令 | RedPockets Admin Command
+    usage: /redpocketadmin help
+    aliases: [rpa, 红包管理]
+    permission: redpockets.admin
+
+permissions:
+  redpockets.use:
+    description: 允许使用红包系统
+    default: true
+  redpockets.admin:
+    description: 红包管理员权限
+    default: op
+  redpockets.create:
+    description: 允许创建红包
+    default: true
+  redpockets.grab:
+    description: 允许抢红包
+    default: true
+  redpockets.send:
+    description: 允许发送红包
+    default: true
+  redpockets.random:
+    description: 允许创建随机金额红包
+    default: true
+  redpockets.average:
+    description: 允许创建平分红包
+    default: true
+  redpockets.check:
+    description: 允许查看红包记录
+    default: true
+  redpockets.delete:
+    description: 允许删除红包
+    default: op
+  redpockets.bypass:
+    description: 绕过红包限制
+    default: op
+  redpockets.broadcast:
+    description: 允许广播红包信息
+    default: true
